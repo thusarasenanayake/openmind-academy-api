@@ -1,0 +1,56 @@
+{
+  "title": "student",
+  "required": ["ID", "name", "address", "courseID", "phone", "email"],
+  "additionalProperties": false,
+  "properties": {
+    "ID": {
+      "bsonType": "string",
+      "minLength": 1,
+      "maxLength": 5,
+      "validate": {
+        "%or": [{ "%%prev": { "%exists": false } }, { "%%prev": "%%this" }]
+      }
+    },
+    "_id": {
+      "bsonType": "objectId"
+    },
+    "address": {
+      "bsonType": "object",
+      "required": ["city", "line1", "line2"],
+      "properties": {
+        "city": {
+          "bsonType": "string"
+        },
+        "line1": {
+          "bsonType": "string"
+        },
+        "line2": {
+          "bsonType": "string"
+        },
+        "line3": {
+          "bsonType": "string"
+        }
+      }
+    },
+    "courseID": {
+      "bsonType": "string",
+      "minLength": 1,
+      "maxLength": 3
+    },
+    "email": {
+      "bsonType": "string",
+      "minLength": 1,
+      "maxLength": 512,
+      "pattern": "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$"
+    },
+    "name": {
+      "bsonType": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "phone": {
+      "bsonType": "string",
+      "pattern": "^[0][\\d]{2}[ ][\\d]{4}[ ][\\d]{3}$"
+    }
+  }
+}
