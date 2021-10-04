@@ -1,7 +1,7 @@
 GET http://localhost:5000/students
 
 ###
-GET http://localhost:5000/students/9400
+GET http://localhost:5000/students/920
 
 ###
 DELETE http://localhost:5000/students/1268
@@ -11,14 +11,29 @@ POST http://localhost:5000/students/
 content-type: application/json
 
 {
-    "ID": 9400,
-    "name": "Mariah Hariyah",
+    "ID": 920,
+    "name": "Test",
     "address": {
-      "line1": "9329 Shanna Route",
-      "line2": "Mahardika Center",
-      "city": "West Demarcuschester"
+      "line1": "9oute",
+      "line2": " Center",
+      "city": "Westr"
     },
     "courseID": 145,
-    "phone": "025 5262 542",
-    "email": "Alfonso_Damanik@gmail.com"
-  }
+    "phone": "011 2225 112",
+    "email": "asdk@gmail.com"
+}
+
+
+###
+PUT http://localhost:5000/students/9400
+content-type: application/json
+
+{
+    "address": {
+      "line1": "9329 Shasnna Route",
+      "line2": "Mahardika Center",
+      "line3":"Added",
+      "city": "West Demarcuschester"
+    }
+}
+

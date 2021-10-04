@@ -1,17 +1,17 @@
 function Student(data) {
-  this.ID = data.ID;
-  this.name = data.name;
-  this.courseID = data.courseID;
-  this.address = {
-    line1: data.address.line1,
-    line2: data.address.line2,
-    line3: data.address.line3 || '',
-    city: data.address.city,
-  };
+  data.ID ? (this.ID = data.ID) : false;
+  data.name ? (this.name = data.name) : false;
+  data.courseID ? (this.courseID = data.courseID) : false;
 
-  this.address['city'] = data.address.city;
-  this.phone = data.phone;
-  this.email = data.email;
+  this.address = {};
+  if (data.address.line1) this.address.line1 = data.address.line1;
+  if (data.address.line2) this.address.line2 = data.address.line2;
+  if (data.address.line3) this.address.line3 = data.address.line3;
+  if (data.address.city) this.address.city = data.address.city;
+
+  data.address.city ? (this.address['city'] = data.address.city) : false;
+  data.phone ? (this.phone = data.phone) : false;
+  data.email ? (this.email = data.email) : false;
 }
 
 module.exports = Student;
