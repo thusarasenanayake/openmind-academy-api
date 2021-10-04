@@ -1,15 +1,12 @@
 {
-  "title": "student",
+  "bsonType": "object",
   "required": ["ID", "name", "address", "courseID", "phone", "email"],
   "additionalProperties": false,
   "properties": {
     "ID": {
-      "bsonType": "string",
-      "minLength": 1,
-      "maxLength": 5,
-      "validate": {
-        "%or": [{ "%%prev": { "%exists": false } }, { "%%prev": "%%this" }]
-      }
+      "bsonType": "int",
+      "minimum": 1,
+      "maximum": 99999
     },
     "_id": {
       "bsonType": "objectId"
@@ -33,9 +30,9 @@
       }
     },
     "courseID": {
-      "bsonType": "string",
-      "minLength": 1,
-      "maxLength": 3
+      "bsonType": "int",
+      "minimum": 1,
+      "maximum": 999
     },
     "email": {
       "bsonType": "string",

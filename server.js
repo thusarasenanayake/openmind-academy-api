@@ -6,10 +6,14 @@ const studentRoutes = require('./routes/studentRoutes');
 const app = express();
 
 // ------ config ------
+
+app.use(express.json());
 app.set('json spaces', 2);
 const port = process.env.PORT || 5000;
 
 // ------ database ------
+
+// database.init('openmind_academy', 'students');
 
 database
   .connect()
@@ -27,8 +31,25 @@ app.use(express.json());
 // ------ routes ------
 app.use('/students', studentRoutes);
 
-// ------ config ------
-// ------ config ------
-// ------ config ------
-// ------ config ------
-// ------ config ------
+// ------ redirects ------
+
+// ------ bottom m/ws ------
+
+// ------ error handling ------
+
+app.use((req, res, next) => {
+  const error = new Error(404);
+  next(error);
+});
+
+app.use((err, req, res, next) => {
+  if (err.message === '404') {
+    return res.status(404).json({
+      status: 'fail',
+      message: 'resource not found',
+    });
+  }
+
+  res.json({ status: 'error', message: 'invalid request' });
+  next();
+});
