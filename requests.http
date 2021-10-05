@@ -1,37 +1,37 @@
+### get all students details
 GET http://localhost:5000/students
 
-###
+### get details of a student with ID 1390
 GET http://localhost:5000/students/1390
 
-###
-DELETE http://localhost:5000/students/931
+### delete a student record with ID 1390
+DELETE http://localhost:5000/students/1390
 
-###
+### create a new student document
 POST http://localhost:5000/students/
 content-type: application/json
 
 {
-    "ID": 92009,
-    "name": "o",
+    "ID": 1000,
+    "name": "test",
     "address": {
-      "line1": "9outeppl",
-      "line2": " Center",
-      "city": "Westr"
+      "line1": "address1",
+      "line2": " address2",
+      "city": "city"
     },
     "courseID": 145,
     "phone": "011 2225 112",
-    "email": "asdk@gmail.com"
+    "email": "test@test.com"
 }
 
 
-###
-PUT http://localhost:5000/students/1390
+### update student details of ID 1000
+PUT http://localhost:5000/students/1000
 content-type: application/json
 
 {
+  "name":"new name",
     "address": {
-      "line1": " Shasnna Route",
-      "line2": "Mahardika Center",
       "line3":"Added",
       "city": "West Demarcuschester"
     }

@@ -1,113 +1,68 @@
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
 
-  <h3 align="center">project_title</h3>
+  <h3 align="center">OpenMind Academy API</h3>
 
   <p align="center">
-    project_description
+    A RESTful API for an education institute
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/thusarasenanayake/openmind-academy-api"><strong>Explore the docs »</strong></a>
     <br />
-    <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    <a href="https://github.com/thusarasenanayake/openmind-academy-api/issues">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/thusarasenanayake/openmind-academy-api/issues">Request Feature</a>
   </p>
 </p>
-
-<!-- TABLE OF CONTENTS -->
-<details open="open">
-  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
-  </ol>
-</details>
 
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
+ 
+A simple API for CRUD operations. The objective of this project is to try native mongodb driver and schema. Database schema and available endpoints are listed below 🔻
 
-[![Tooltip][product-screenshot-1]][product-url]
+- 📃 [Schema](https://github.com/thusarasenanayake/openmind-academy-api/blob/main/database/studentsSchema.json)
+- 🔁 [Endpoints](https://github.com/thusarasenanayake/openmind-academy-api/blob/main/requests.http)
 
 A list of commonly used resources that I find helpful are listed in the acknowledgements.
 
-
 ### Built With
 
-- []()
-- []()
-- []()
+- [Express](https://expressjs.com/)
+- [Mongo DB Atlas](https://www.mongodb.com/cloud/atlas)
 
 <!-- GETTING STARTED -->
 
-## Getting Started
+## Getting Started 👉
 
-To get a local copy up and running follow these simple steps.
+To get a local copy up and running, open your terminal in a favoured location and follow these simple example steps.
 
-### Prerequisites
+```sh
+git clone https://github.com/thusarasenanayake/openmind-academy-api.git openmind-academy-api
+cd openmind-academy-api
+npm install
+```
 
-This is an example of how to list things you need to use the software and how to install them.
+After successful installation, configure these settings related with **.env.example** file in config folder.
 
-- npm
-  ```sh
-  npm install npm@latest -g
-  ```
+```
+- Rename .env.example to .env
+- Replace <MONGODB_URI> with your MongoDB connection string
+    example for local db : MONGODB_URI=mongodb://localhost:27017/
+    example for MongoDB Atlas: MONGODB_URI=mongodb+srv://name:<password>@cluster0.wszwp.mongodb.net/test
+```
 
-### Installation
+And then run the project by
 
-1. Clone the repo
-   ```sh
-   git clone https://github.com/github_username/repo_name.git
-   ```
-2. Install NPM packages
-   ```sh
-   npm install
-   ```
-
-<!-- USAGE EXAMPLES -->
-
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+```sh
+npm start
+```
 
 <!-- ROADMAP -->
 
-## Roadmap
+## Roadmap 🛫
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/thusarasenanayake/openmind-academy-api/issues) for a list of proposed features (and known issues).
 
 <!-- CONTRIBUTING -->
 
@@ -129,43 +84,29 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- CONTACT -->
 
-## Contact
+## Contact 📬
 
-Your Name - [@twitter_handle][issues-url] - email
-
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Project Link: [https://github.com/thusarasenanayake/openmind-academy-api](https://github.com/thusarasenanayake/openmind-academy-api)
 
 <!-- ACKNOWLEDGEMENTS -->
 
 ## Acknowledgements
 
-- []()
-- []()
-- []()
+- [README Template](https://github.com/othneildrew/Best-README-Template)
+- [Choose an Open Source License](https://choosealicense.com)
+- [JSend](https://github.com/omniti-labs/jsend)
+- [Faker](https://www.npmjs.com/package/faker)
 
 <!-- github -->
 
-[repo-url]: https://github.com/github_username/repo_name
-[issues-url]: https://github.com/github_username/repo_name/issues
-[contributors-url]: https://github.com/github_username/repo_name/graphs/contributors
-[forks-url]: https://github.com/github_username/repo_name/network/members
-[stars-url]: https://github.com/github_username/repo_name/stargazers
-[license-url]: https://github.com/github_username/repo_name/blob/main/LICENSE.txt
+[repo-url]: https://github.com/thusarasenanayake/openmind-academy-api
+[issues-url]: https://github.com/thusarasenanayake/openmind-academy-api/issues
+[contributors-url]: https://github.com/thusarasenanayake/openmind-academy-api/graphs/contributors
+[forks-url]: https://github.com/thusarasenanayake/openmind-academy-api/network/members
+[stars-url]: https://github.com/thusarasenanayake/openmind-academy-api/stargazers
+[license-url]: https://github.com/thusarasenanayake/openmind-academy-api/blob/main/LICENSE.txt
 
-<!-- shields -->
-
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo.svg?style=for-the-badge
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo.svg?style=for-the-badge
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo.svg?style=for-the-badge
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo.svg?style=for-the-badge
-[license-shield]: https://img.shields.io/github/license/github_username/repo.svg?style=for-the-badge
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-
-<!-- resources / product -->
+<!-- resources / products -->
 
 [product-screenshot-1]: https://mdg.imgix.net/assets/images/san-juan-mountains.jpg?auto=format&fit=clip&q=40&w=1080
 [product-url]: www.google.com
-
-<!-- contact -->
-
-[linkedin-url]: https://linkedin.com/in/github_username
