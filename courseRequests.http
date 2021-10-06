@@ -2,10 +2,10 @@
 GET http://localhost:5000/courses
 
 ### get details of a course with ID 1390
-GET http://localhost:5000/courses/121
+GET http://localhost:5000/courses/1390
 
 ### delete a course record with ID 1390
-DELETE http://localhost:5000/courses/145
+DELETE http://localhost:5000/courses/1390
 
 ### create a new course document
 POST http://localhost:5000/courses/
@@ -23,17 +23,16 @@ content-type: application/json
 
 
 ### update course details of ID 1000
-PUT http://localhost:5000/courses/121
+PUT http://localhost:5000/courses/1000
 content-type: application/json
 
 {
   "ID": 100,
-  "name": "Rustic Fresh Shirt",
   "lectures": [
     "Timothy",
     "Zora"
   ],
-  "credits": 11
+  "credits": 0
 }
 
 

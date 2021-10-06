@@ -19,10 +19,13 @@
 
 ## About The Project
  
-A simple API for CRUD operations. The objective of this project is to try native mongodb driver and schema. Database schema and available endpoints are listed below 🔻
+A simple API for CRUD operations. The objective of this project is to try native mongodb driver and schema. Database schemas and available endpoints are listed below 🔻
 
-- 📃 [Schema](https://github.com/thusarasenanayake/openmind-academy-api/blob/main/database/studentsSchema.json)
-- 🔁 [Endpoints](https://github.com/thusarasenanayake/openmind-academy-api/blob/main/requests.http)
+- 📃 [Student schema](https://github.com/thusarasenanayake/openmind-academy-api/blob/main/database/studentsSchema.json)
+- 📃 [Course schema](https://github.com/thusarasenanayake/openmind-academy-api/blob/main/database/coursesSchema.json)
+- 🔁 [Student endpoints](https://github.com/thusarasenanayake/openmind-academy-api/blob/main/studentRequests.http)
+- 🔁 [Course endpoints](https://github.com/thusarasenanayake/openmind-academy-api/blob/main/courseRequests.http)
+
 
 A list of commonly used resources that I find helpful are listed in the acknowledgements.
 
@@ -106,7 +109,5 @@ Project Link: [https://github.com/thusarasenanayake/openmind-academy-api](https:
 [stars-url]: https://github.com/thusarasenanayake/openmind-academy-api/stargazers
 [license-url]: https://github.com/thusarasenanayake/openmind-academy-api/blob/main/LICENSE.txt
 
-<!-- resources / products -->
 
-[product-screenshot-1]: https://mdg.imgix.net/assets/images/san-juan-mountains.jpg?auto=format&fit=clip&q=40&w=1080
-[product-url]: www.google.com
+
