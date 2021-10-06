@@ -46,10 +46,10 @@ app.use((err, req, res, next) => {
   if (err.message === '404') {
     return res.status(404).json({
       status: 'fail',
-      message: 'resource not found',
+      data: ['resource not found'],
     });
   }
 
-  res.json({ status: 'error', message: 'invalid request' });
+  res.json({ status: 'error', data: ['invalid request'] });
   next();
 });

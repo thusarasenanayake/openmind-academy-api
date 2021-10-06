@@ -1,24 +1,13 @@
 const database = require('../database/mongodb');
 const students = database.getCollection('openmind_academy', 'students');
 const Student = require('../models/Student');
+const { handleErrors } = require('../helpers/errorHandler');
 
 // ------ responses ------
-const setNotFound = {
-  status: 'fail',
-  data: [{ message: 'No documents found!' }],
-};
-
 const setSuccess = (result) => {
   return {
     status: 'success',
     data: [result],
-  };
-};
-
-const setError = (err) => {
-  return {
-    status: 'error',
-    data: [err.message || err.name],
   };
 };
 
@@ -30,11 +19,6 @@ const student_index_all = async (req, res) => {
 
   const cursor = await students.find({}, options);
 
-  if ((await cursor.count()) === 0) {
-    res.status(404).json(setNotFound);
-    return;
-  }
-
   const result = await cursor.toArray();
   res.json(setSuccess(result));
 };
@@ -43,7 +27,8 @@ const student_index_one = async (req, res) => {
 
   const result = await students.findOne({ ID: id }, { projection: { _id: 0 } });
   if (result === null) {
-    res.status(404).json(setNotFound);
+    const error = handleErrors('fail', 404, req);
+    res.status(404).json(error);
     return;
   }
 
@@ -58,7 +43,8 @@ const student_delete = async (req, res) => {
     res.json(setSuccess('Successfully deleted one document.'));
     return;
   }
-  res.json(setNotFound);
+  const error = handleErrors('fail', 404, req);
+  res.json(error);
 };
 
 const student_create = async (req, res) => {
@@ -67,7 +53,8 @@ const student_create = async (req, res) => {
     await students.insertOne(student);
     res.json(setSuccess('Successfully added one document.'));
   } catch (err) {
-    res.status(401).json(setError(err));
+    const error = handleErrors('error', err, req);
+    res.status(401).json(error);
   }
 };
 
@@ -84,9 +71,11 @@ const student_update = async (req, res) => {
       res.json(setSuccess('Successfully updated one document.'));
       return;
     }
-    res.json('No documents matched the query. Updated 0 documents.');
+    const error = handleErrors('fail', 404, req);
+    res.json(error);
   } catch (err) {
-    res.status(401).json(setError(err));
+    const error = handleErrors('error', err, req);
+    res.status(401).json(error);
   }
 };
 
