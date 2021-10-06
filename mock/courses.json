@@ -1,0 +1,32 @@
+[
+  {
+    "ID": 100,
+    "name": "Tasty Frozen Shoes",
+    "lectures": ["Alexie", "Helene"],
+    "credits": 18
+  },
+  {
+    "ID": 425,
+    "name": "Incredible Granite Bike",
+    "lectures": ["Wilbert", "Litzy"],
+    "credits": 0
+  },
+  {
+    "ID": 145,
+    "name": "Rustic Fresh Shirt",
+    "lectures": ["Timothy", "Zora"],
+    "credits": 11
+  },
+  {
+    "ID": 221,
+    "name": "Small Wooden Chicken",
+    "lectures": ["Cooper", "Cydney"],
+    "credits": 8
+  },
+  {
+    "ID": 232,
+    "name": "Awesome Soft Table",
+    "lectures": ["Astrid", "Bailey"],
+    "credits": 3
+  }
+]

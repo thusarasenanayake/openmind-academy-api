@@ -37,14 +37,7 @@ const handleErrors = (status, err, req) => {
       code: 121,
       domain: req.originalUrl,
       message: err.message,
-      requiredAs: {
-        ID: ' 0 < int < 100000',
-        name: 'string',
-        address: { city: 'string', line1: 'string', line2: 'string' },
-        courseID: '0 < int < 1000',
-        phone: '0xx xxxx xxx',
-        email: 'name@domain.com',
-      },
+      info: err.errInfo.details,
     });
   }
 

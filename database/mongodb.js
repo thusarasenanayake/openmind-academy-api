@@ -18,27 +18,29 @@ exports.getCollection = (databaseName, collectionName) => {
 
 // ------ (for initialization) creating a collection and adding mock data ------
 
-// exports.init = async (databaseName, collectionName) => {
-//   await client.connect();
-//   const database = client.db(databaseName);
-//   try {
-//     const schema = JSON.parse(
-//       await readFile(`${__dirname}/${collectionName}Schema.json`)
-//     );
-//     const docs = JSON.parse(
-//       await readFile(`${__dirname}/../mock/${collectionName}.json`)
-//     );
-//     const newCollection = await database.createCollection(collectionName, {
-//       validator: { $jsonSchema: schema },
-//     });
-//     newCollection.createIndex({ ID: 1 }, { unique: true });
+exports.init = async (databaseName, collectionName) => {
+  await client.connect();
+  const database = client.db(databaseName);
+  try {
+    const schema = JSON.parse(
+      await readFile(`${__dirname}/${collectionName}Schema.json`)
+    );
+    const docs = JSON.parse(
+      await readFile(`${__dirname}/../mock/${collectionName}.json`)
+    );
+    const newCollection = await database.createCollection(collectionName, {
+      validator: { $jsonSchema: schema },
+    });
 
-//     const result = await newCollection.insertMany(docs);
-//     console.log(`${result.insertedCount} documents were inserted`);
-//   } catch (err) {
-//     console.log(err.message);
-//   }
-// };
+    // optional settings
+    newCollection.createIndex({ ID: 1 }, { unique: true });
+
+    const result = await newCollection.insertMany(docs);
+    console.log(`${result.insertedCount} documents were inserted`);
+  } catch (err) {
+    console.log(err.message);
+  }
+};
 
 // ------ (for validation) validating a sample document ------
 

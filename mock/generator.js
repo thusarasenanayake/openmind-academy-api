@@ -27,4 +27,18 @@ for (let i = 0; i < 25; i++) {
   students.push(doc);
 }
 
-console.log(JSON.stringify(students));
+// ------ courses ------
+
+const courses = [];
+
+for (let i = 0; i < 5; i++) {
+  const doc = {
+    ID: faker.helpers.randomize([425, 102, 145, 232, 221]),
+    name: faker.commerce.productName(),
+    lectures: [faker.name.firstName(), faker.name.firstName()],
+    credits: faker.datatype.number(20),
+  };
+  courses.push(doc);
+}
+
+console.log(JSON.stringify(courses));
